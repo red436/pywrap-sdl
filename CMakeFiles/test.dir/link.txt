@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/test.dir/main.cpp.o -o test  /usr/lib/libSDL2main.a /usr/lib/libSDL2-2.0.so.0.18.2 -lSDL2_image /usr/lib/libpython3.10.so 
