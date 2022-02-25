@@ -72,6 +72,7 @@ class Window {
     void addDynBody( string name, float x, float y, float w, float h, float density, float friction )
     {
         b2BodyDef bodyDef;
+        bodyDef.type = b2_dynamicBody;
         bodyDef.position.Set( x, y );
         b2Body *body = bWorld->CreateBody(&bodyDef);
         b2PolygonShape box;

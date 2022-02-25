@@ -56,7 +56,7 @@ window.addDynBody("box", 0.0, 4.0, 1.0, 1.0, 1.0, 0.3)
 boxVars = window.getBodyMetrics("box")
 print(str(boxVars))
 
-maxFrames = 10
+maxFrames = 100
 currFrame = 0
 while True:
 
