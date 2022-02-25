@@ -8,39 +8,90 @@
 #include <map>
 #include <list>
 #include <iterator>
+#include <imgui.h>
+#include "imgui/backends/imgui_impl_sdl.h"
+#include "imgui/backends/imgui_impl_sdlrenderer.h"
 #include "SDL.h"
 #include <SDL2/SDL_image.h>
-#include <box2d.h>
-#include <imgui.h>
-#include <imgui_impl_sdl.h>
-#include <imgui_impl_sdlrenderer.h>
+#include <box2d/box2d.h>
 // #include <SDL2/SDL_mixer.h>
-#include <SDL2/SDL_gfx>
+#include <SDL2/SDL2_gfxPrimitives.h>
 
 namespace py = pybind11;
 using namespace std;
-
 class Window {
 
     private:
  
     map<string, SDL_Surface *> surfaces; 
     map<string, SDL_Rect> rects;
+    map<string, SDL_Texture *> textures;
+    map<string, b2BodyDef> bBodyDefs;
+    map<string, b2Body *> bBodys;
+    float timeStep = 1.0f / 60.0f;
+    int32 velocityIterations = 6;
+    int32 positionIterations = 2;
     // map<string, Mix_Chunk *> chunks;
     // map<string, Mix_Music *> tracks;
 
     public:
 
-    
+    b2Vec2 gravity;
+    b2World *bWorld;
     SDL_Window *screen;
+    SDL_Renderer *renderer;
+    SDL_Texture *gTexture;
     SDL_Surface *gScreen;
     SDL_AudioDeviceID device_id;
     SDL_Event event;
     SDL_Rect scrRect;
 
+    Window()
+    {
+       gravity.x = 0.0f;
+       gravity.y = -10.0f;
+       bWorld = new b2World(gravity);
+    }
     void updateWindow()
     {
-        SDL_UpdateWindowSurface( screen );
+        bWorld->Step(timeStep, velocityIterations, positionIterations);
+        ImGui::Render();
+        ImGui_ImplSDLRenderer_RenderDrawData(ImGui::GetDrawData());
+        SDL_RenderPresent( renderer );
+    }
+    void addBody( string name, float x, float y, float w, float h)
+    {
+        b2BodyDef bodyDef;
+        bodyDef.position.Set( x, y );
+        b2Body *body = bWorld->CreateBody(&bodyDef);
+        b2PolygonShape box;
+        box.SetAsBox( w, h );
+        body->CreateFixture( &box, 0.0f );
+        bBodys[name] = body;
+    }
+    void addDynBody( string name, float x, float y, float w, float h, float density, float friction )
+    {
+        b2BodyDef bodyDef;
+        bodyDef.position.Set( x, y );
+        b2Body *body = bWorld->CreateBody(&bodyDef);
+        b2PolygonShape box;
+        box.SetAsBox( w, h );
+        b2FixtureDef fixtureDef;
+        fixtureDef.shape = &box;
+        fixtureDef.density = density;
+        fixtureDef.friction = friction;
+        body->CreateFixture(&fixtureDef);
+        bBodys[name] = body;
+    }
+    vector<float> getBodyMetrics( string name )
+    {
+       b2Vec2 pos = bBodys[name]->GetPosition();
+       float angle = bBodys[name]->GetAngle();
+       vector<float> out;
+       out.push_back(pos.x);
+       out.push_back(pos.y);
+       out.push_back(angle);
+       return out;
     }
     unsigned int getTicks()
     {
@@ -48,7 +99,8 @@ class Window {
     }
     void clearWindow()
     {
-        SDL_FillRect(gScreen, NULL, SDL_MapRGB(gScreen->format, 0, 0, 0));
+          SDL_SetRenderDrawColor( renderer, 0, 0, 0, 255 );
+          SDL_RenderClear( renderer );
     }
     //void addChunk( string name )
     //{
@@ -98,7 +150,15 @@ class Window {
         const int sample_size = sizeof(int16_t) * 1;
         SDL_QueueAudio(device_id, &byte, sample_size);
     }
-
+    void addTexture( string name )
+    {
+        SDL_Surface *surf;
+        SDL_Texture *tex;
+        surf = IMG_Load(name.c_str());
+        tex = SDL_CreateTextureFromSurface( renderer, surf );
+        textures[name] = tex;
+        SDL_FreeSurface( surf );
+    }
     void addSurface( string name )
     {
         SDL_Surface *surf;
@@ -131,6 +191,20 @@ class Window {
         rect.y = y;
         SDL_BlitSurface(surfaces[surfaceName], NULL, gScreen, &rect);
     }
+    void applyTexture( string name, double x, double y )
+    {
+        SDL_Rect rect;
+        SDL_QueryTexture(textures[name], NULL, NULL, &rect.w, &rect.h);
+        SDL_RenderSetViewport( renderer, &rect );
+        SDL_RenderCopy( renderer, textures[name], NULL, NULL );
+    }
+    void updateImGui()
+    {
+        ImGui_ImplSDLRenderer_NewFrame();
+        ImGui_ImplSDL2_NewFrame();
+        ImGui::NewFrame();
+        ImGui::ShowDemoWindow();
+    }
     void makeWindow(int w, int h, string name)
     {
         if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) != 0)
@@ -153,6 +227,13 @@ class Window {
         }
         // Mix_Volume(-1, MIX_MAX_VOLUME / 2);
         screen = SDL_CreateWindow(name.c_str(), 0, 0, w, h, 0);
+        renderer = SDL_CreateRenderer( screen, -1, SDL_RENDERER_ACCELERATED );
+        SDL_SetRenderDrawColor( renderer, 0xFF, 0xFF, 0xFF, 0xFF );
+        ImGui::CreateContext();
+        ImGuiIO& io = ImGui::GetIO(); (void)io;
+        ImGui::StyleColorsClassic();
+        ImGui_ImplSDL2_InitForSDLRenderer(screen, renderer);
+        ImGui_ImplSDLRenderer_Init(renderer);
         gScreen = SDL_GetWindowSurface( screen );
         scrRect.w = gScreen->w;
         scrRect.h = gScreen->h;
@@ -182,7 +263,7 @@ class Window {
         result["y"] = "";
         if(SDL_PollEvent(&event))
         {
-
+                ImGui_ImplSDL2_ProcessEvent(&event);
 		switch( event.type )
 		{
 		    case SDL_KEYUP:
@@ -293,10 +374,16 @@ class Window {
     void closeWindow()
     {
         SDL_FreeSurface( gScreen );
+        SDL_DestroyTexture( gTexture );
         for( const auto& [key, value] : surfaces)
         {
             SDL_FreeSurface(value);
         }
+        for( const auto& [key, value] : textures)
+        {
+            SDL_DestroyTexture(value);
+        }
+        SDL_DestroyRenderer( renderer );
         SDL_DestroyWindow( screen );
         SDL_CloseAudioDevice( device_id );
         SDL_Quit();
@@ -320,8 +407,14 @@ PYBIND11_EMBEDDED_MODULE(Window, m)
     .def("addRect", &Window::addRect)
     .def("addSurface", &Window::addSurface)
     .def("applySurface", &Window::applySurface)
+    .def("addTexture", &Window::addTexture)
+    .def("applyTexture", &Window::applyTexture)
+    .def("addBody", &Window::addBody)
+    .def("addDynBody", &Window::addDynBody)
+    .def("getBodyMetrics", &Window::getBodyMetrics)
     .def("clearWindow", &Window::clearWindow)
     .def("updateWindow", &Window::updateWindow)
+    .def("updateImGui", &Window::updateImGui)
     .def("closeWindow", &Window::closeWindow);
 }
 

@@ -83,20 +83,132 @@ CMakeFiles/test.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/red/Projects/pywrap-sdl/main.cpp -o CMakeFiles/test.dir/main.cpp.s
 
+CMakeFiles/test.dir/imgui/imgui.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/imgui/imgui.cpp.o: imgui/imgui.cpp
+CMakeFiles/test.dir/imgui/imgui.cpp.o: CMakeFiles/test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/red/Projects/pywrap-sdl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test.dir/imgui/imgui.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/imgui/imgui.cpp.o -MF CMakeFiles/test.dir/imgui/imgui.cpp.o.d -o CMakeFiles/test.dir/imgui/imgui.cpp.o -c /home/red/Projects/pywrap-sdl/imgui/imgui.cpp
+
+CMakeFiles/test.dir/imgui/imgui.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/imgui/imgui.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/red/Projects/pywrap-sdl/imgui/imgui.cpp > CMakeFiles/test.dir/imgui/imgui.cpp.i
+
+CMakeFiles/test.dir/imgui/imgui.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/imgui/imgui.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/red/Projects/pywrap-sdl/imgui/imgui.cpp -o CMakeFiles/test.dir/imgui/imgui.cpp.s
+
+CMakeFiles/test.dir/imgui/imgui_demo.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/imgui/imgui_demo.cpp.o: imgui/imgui_demo.cpp
+CMakeFiles/test.dir/imgui/imgui_demo.cpp.o: CMakeFiles/test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/red/Projects/pywrap-sdl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/test.dir/imgui/imgui_demo.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/imgui/imgui_demo.cpp.o -MF CMakeFiles/test.dir/imgui/imgui_demo.cpp.o.d -o CMakeFiles/test.dir/imgui/imgui_demo.cpp.o -c /home/red/Projects/pywrap-sdl/imgui/imgui_demo.cpp
+
+CMakeFiles/test.dir/imgui/imgui_demo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/imgui/imgui_demo.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/red/Projects/pywrap-sdl/imgui/imgui_demo.cpp > CMakeFiles/test.dir/imgui/imgui_demo.cpp.i
+
+CMakeFiles/test.dir/imgui/imgui_demo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/imgui/imgui_demo.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/red/Projects/pywrap-sdl/imgui/imgui_demo.cpp -o CMakeFiles/test.dir/imgui/imgui_demo.cpp.s
+
+CMakeFiles/test.dir/imgui/imgui_draw.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/imgui/imgui_draw.cpp.o: imgui/imgui_draw.cpp
+CMakeFiles/test.dir/imgui/imgui_draw.cpp.o: CMakeFiles/test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/red/Projects/pywrap-sdl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/test.dir/imgui/imgui_draw.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/imgui/imgui_draw.cpp.o -MF CMakeFiles/test.dir/imgui/imgui_draw.cpp.o.d -o CMakeFiles/test.dir/imgui/imgui_draw.cpp.o -c /home/red/Projects/pywrap-sdl/imgui/imgui_draw.cpp
+
+CMakeFiles/test.dir/imgui/imgui_draw.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/imgui/imgui_draw.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/red/Projects/pywrap-sdl/imgui/imgui_draw.cpp > CMakeFiles/test.dir/imgui/imgui_draw.cpp.i
+
+CMakeFiles/test.dir/imgui/imgui_draw.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/imgui/imgui_draw.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/red/Projects/pywrap-sdl/imgui/imgui_draw.cpp -o CMakeFiles/test.dir/imgui/imgui_draw.cpp.s
+
+CMakeFiles/test.dir/imgui/imgui_tables.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/imgui/imgui_tables.cpp.o: imgui/imgui_tables.cpp
+CMakeFiles/test.dir/imgui/imgui_tables.cpp.o: CMakeFiles/test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/red/Projects/pywrap-sdl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/test.dir/imgui/imgui_tables.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/imgui/imgui_tables.cpp.o -MF CMakeFiles/test.dir/imgui/imgui_tables.cpp.o.d -o CMakeFiles/test.dir/imgui/imgui_tables.cpp.o -c /home/red/Projects/pywrap-sdl/imgui/imgui_tables.cpp
+
+CMakeFiles/test.dir/imgui/imgui_tables.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/imgui/imgui_tables.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/red/Projects/pywrap-sdl/imgui/imgui_tables.cpp > CMakeFiles/test.dir/imgui/imgui_tables.cpp.i
+
+CMakeFiles/test.dir/imgui/imgui_tables.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/imgui/imgui_tables.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/red/Projects/pywrap-sdl/imgui/imgui_tables.cpp -o CMakeFiles/test.dir/imgui/imgui_tables.cpp.s
+
+CMakeFiles/test.dir/imgui/imgui_widgets.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/imgui/imgui_widgets.cpp.o: imgui/imgui_widgets.cpp
+CMakeFiles/test.dir/imgui/imgui_widgets.cpp.o: CMakeFiles/test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/red/Projects/pywrap-sdl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/test.dir/imgui/imgui_widgets.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/imgui/imgui_widgets.cpp.o -MF CMakeFiles/test.dir/imgui/imgui_widgets.cpp.o.d -o CMakeFiles/test.dir/imgui/imgui_widgets.cpp.o -c /home/red/Projects/pywrap-sdl/imgui/imgui_widgets.cpp
+
+CMakeFiles/test.dir/imgui/imgui_widgets.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/imgui/imgui_widgets.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/red/Projects/pywrap-sdl/imgui/imgui_widgets.cpp > CMakeFiles/test.dir/imgui/imgui_widgets.cpp.i
+
+CMakeFiles/test.dir/imgui/imgui_widgets.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/imgui/imgui_widgets.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/red/Projects/pywrap-sdl/imgui/imgui_widgets.cpp -o CMakeFiles/test.dir/imgui/imgui_widgets.cpp.s
+
+CMakeFiles/test.dir/imgui/backends/imgui_impl_sdl.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/imgui/backends/imgui_impl_sdl.cpp.o: imgui/backends/imgui_impl_sdl.cpp
+CMakeFiles/test.dir/imgui/backends/imgui_impl_sdl.cpp.o: CMakeFiles/test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/red/Projects/pywrap-sdl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/test.dir/imgui/backends/imgui_impl_sdl.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/imgui/backends/imgui_impl_sdl.cpp.o -MF CMakeFiles/test.dir/imgui/backends/imgui_impl_sdl.cpp.o.d -o CMakeFiles/test.dir/imgui/backends/imgui_impl_sdl.cpp.o -c /home/red/Projects/pywrap-sdl/imgui/backends/imgui_impl_sdl.cpp
+
+CMakeFiles/test.dir/imgui/backends/imgui_impl_sdl.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/imgui/backends/imgui_impl_sdl.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/red/Projects/pywrap-sdl/imgui/backends/imgui_impl_sdl.cpp > CMakeFiles/test.dir/imgui/backends/imgui_impl_sdl.cpp.i
+
+CMakeFiles/test.dir/imgui/backends/imgui_impl_sdl.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/imgui/backends/imgui_impl_sdl.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/red/Projects/pywrap-sdl/imgui/backends/imgui_impl_sdl.cpp -o CMakeFiles/test.dir/imgui/backends/imgui_impl_sdl.cpp.s
+
+CMakeFiles/test.dir/imgui/backends/imgui_impl_sdlrenderer.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/imgui/backends/imgui_impl_sdlrenderer.cpp.o: imgui/backends/imgui_impl_sdlrenderer.cpp
+CMakeFiles/test.dir/imgui/backends/imgui_impl_sdlrenderer.cpp.o: CMakeFiles/test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/red/Projects/pywrap-sdl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/test.dir/imgui/backends/imgui_impl_sdlrenderer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/imgui/backends/imgui_impl_sdlrenderer.cpp.o -MF CMakeFiles/test.dir/imgui/backends/imgui_impl_sdlrenderer.cpp.o.d -o CMakeFiles/test.dir/imgui/backends/imgui_impl_sdlrenderer.cpp.o -c /home/red/Projects/pywrap-sdl/imgui/backends/imgui_impl_sdlrenderer.cpp
+
+CMakeFiles/test.dir/imgui/backends/imgui_impl_sdlrenderer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/imgui/backends/imgui_impl_sdlrenderer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/red/Projects/pywrap-sdl/imgui/backends/imgui_impl_sdlrenderer.cpp > CMakeFiles/test.dir/imgui/backends/imgui_impl_sdlrenderer.cpp.i
+
+CMakeFiles/test.dir/imgui/backends/imgui_impl_sdlrenderer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/imgui/backends/imgui_impl_sdlrenderer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/red/Projects/pywrap-sdl/imgui/backends/imgui_impl_sdlrenderer.cpp -o CMakeFiles/test.dir/imgui/backends/imgui_impl_sdlrenderer.cpp.s
+
 # Object files for target test
 test_OBJECTS = \
-"CMakeFiles/test.dir/main.cpp.o"
+"CMakeFiles/test.dir/main.cpp.o" \
+"CMakeFiles/test.dir/imgui/imgui.cpp.o" \
+"CMakeFiles/test.dir/imgui/imgui_demo.cpp.o" \
+"CMakeFiles/test.dir/imgui/imgui_draw.cpp.o" \
+"CMakeFiles/test.dir/imgui/imgui_tables.cpp.o" \
+"CMakeFiles/test.dir/imgui/imgui_widgets.cpp.o" \
+"CMakeFiles/test.dir/imgui/backends/imgui_impl_sdl.cpp.o" \
+"CMakeFiles/test.dir/imgui/backends/imgui_impl_sdlrenderer.cpp.o"
 
 # External object files for target test
 test_EXTERNAL_OBJECTS =
 
 test: CMakeFiles/test.dir/main.cpp.o
+test: CMakeFiles/test.dir/imgui/imgui.cpp.o
+test: CMakeFiles/test.dir/imgui/imgui_demo.cpp.o
+test: CMakeFiles/test.dir/imgui/imgui_draw.cpp.o
+test: CMakeFiles/test.dir/imgui/imgui_tables.cpp.o
+test: CMakeFiles/test.dir/imgui/imgui_widgets.cpp.o
+test: CMakeFiles/test.dir/imgui/backends/imgui_impl_sdl.cpp.o
+test: CMakeFiles/test.dir/imgui/backends/imgui_impl_sdlrenderer.cpp.o
 test: CMakeFiles/test.dir/build.make
 test: /usr/lib/libSDL2main.a
 test: /usr/lib/libSDL2-2.0.so.0.18.2
 test: /usr/lib/libpython3.10.so
 test: CMakeFiles/test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/red/Projects/pywrap-sdl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/red/Projects/pywrap-sdl/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

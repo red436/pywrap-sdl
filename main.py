@@ -8,10 +8,10 @@ duration = int( 44100 * dur_sec)
 hz = 250
 volume = 20000
 
-window.makeWindow(640, 480, "Changed Window Two")
+window.makeWindow(1280, 720, "Changed Window Two")
 window.addRect("imageOne")
 window.addRect("imageTwo")
-window.addSurface("test.png")
+# window.addSurface("test.png")
 
 x = 0.0
 incr_theta = hz * 2 * math.pi / 44100
@@ -49,13 +49,24 @@ reload = False
 res = ""
 player = Player()
 
+window.addBody("ground", 0.0, -10.0, 50.0, 10)
 
+window.addDynBody("box", 0.0, 4.0, 1.0, 1.0, 1.0, 0.3)
+
+boxVars = window.getBodyMetrics("box")
+print(str(boxVars))
+
+maxFrames = 10
+currFrame = 0
 while True:
 
     window.clearWindow()
-    window.applySurface("test.png", imageX, imageY)
+    # window.applySurface("test.png", imageX, imageY)
+    window.updateImGui()
     evs = window.getEvent()
-
+    if currFrame != maxFrames:
+       print(window.getBodyMetrics("box"))
+       currFrame += 1
     while evs["type"] != "NO_EVENT":
 
        pos = player.processEvents( evs, imageX, imageY )
